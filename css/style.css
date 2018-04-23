@@ -1,0 +1,17 @@
+body {
+  background: radial-gradient(circle, #349996, #28b7b3, #06e5df, #04efc8);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.btn-primary.UI{
+	border-radius: 15px;
+	background-color: red;
+	padding: 1.2em;
+	margin-bottom:10px;
+}
+.btn-primary.UI:hover{
+	background-color: blue;
+	padding: 1.5em;
+	margin-bottom:0px;
+	
+}

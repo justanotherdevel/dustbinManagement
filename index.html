@@ -10,30 +10,28 @@
 </head>
 <body>
 <?php
-	$servername = "localhost";
-	$username = "root";
-	$password = "407080";
-	$database = "dustbin";
-
-	// Create connection
-	$db = new mysqli($servername, $username, $password, $database);
-
-	// Check connection
-	if ($conn->connect_error) {
-    		die("Connection failed: " . $conn->connect_error);
-	} 
-   	if($_SERVER["REQUEST_METHOD"] == "POST") {
+   include("config.php");
+   session_start();
+   
+   if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
+      
       $myusername = mysqli_real_escape_string($db,$_POST['username']);
       $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
+      
       $sql = "SELECT ID FROM Login WHERE User = '$myusername' and Password = '$mypassword'";
       $result = mysqli_query($db,$sql);
+      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+      $active = $row['active'];
       
       $count = mysqli_num_rows($result);
       
       // If result matched $myusername and $mypassword, table row must be 1 row
       if($count == 1) {
-         header("location: index_boot.html");
+         session_register("myusername");
+         $_SESSION['login_user'] = $myusername;
+         
+         header("location: welcome.php");
       }else {
          $error = "Your Login Name or Password is invalid";
       }

@@ -1,0 +1,23 @@
+{
+  "name": "dustbin",
+  "version": "1.0.0",
+  "description": "Dustbin Management",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justanotherdevel/dustbinManagement.git"
+  },
+  "author": "shashwat",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/justanotherdevel/dustbinManagement/issues"
+  },
+  "homepage": "https://github.com/justanotherdevel/dustbinManagement#readme",
+  "dependencies": {
+    "popper.js": "^1.14.3",
+    "tooltip.js": "^1.2.0"
+  }
+}
